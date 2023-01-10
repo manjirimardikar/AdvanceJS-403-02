@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            background-color: #283149;
+        }
+        .maindiv{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-image: "./images/crash.png";
+        }
+        .content{
+            width: 100%;
+            height: 50%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1{
+            font-size: 5rem;
+            color: white;
+            text-shadow: 3px 0px 5px red;
+        }
+        .drum h1{
+            font-size: 5rem;
+            color:crimson;
+            text-shadow: 3px 0px 5px gray;
+        }
+        .drum{
+            width: 12%;
+            height: 50%;
+            border: 10px solid #404B69;
+            border-radius: 5%;
+        }
+        .w{
+            background-image: url(./images/w.png);
+        }
+        .a{
+            background-image: url(./images/a.png);
+        }
+        .s{
+            background-image: url(./images/s.png);
+        }
+        .j{
+            background-image: url(./images/j.png)  ;
+        }
+        .k{
+            background-image: url(./images/k.png);
+        }
+        .d{
+            background-image: url(./images/d.png);
+        }
+        .l{
+            background-image: url(./images/l.png);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="maindiv">
+            <div class="content">
+                <h1>Drum 🥁 Kit</h1>
+            </div>
+        </div>
+        <div class="maindiv">
+            <button  class="drum w" > <h1>w</h1> </button>
+            <button class="drum a" ><h1>a</h1></button>
+            <button class="drum s" ><h1>s</h1></button>
+            <button class="drum d" ><h1>d</h1></button>
+            <button class="drum j" ><h1>j</h1></button>
+            <button class="drum k" ><h1>k</h1></button>
+            <button class="drum l" ><h1>l</h1></button>          
+        </div>
+    </div>
+    <script>
+        var drum=document.getElementsByClassName("drum")
+        for(let i=0;i<drum.length;i++){
+            drum[i].addEventListener('click',(event)=>{
+                // console.log(dum[i].innerText);
+                playsound(drum[i].innerText)
+            })
+        }
+        function playsound(params) {
+            if(params=='w'){
+                const audio=new Audio("sounds/w.mp3")
+                audio.play()
+
+            }else if(params=='a'){
+                const audio=new Audio('sounds/a.mp3')
+                audio.play()
+            }else if(params=='s'){
+                const audio=new Audio('sounds/s.mp3')
+                audio.play()
+            
+            }else if(params=='d'){
+                const audio=new Audio('sounds/d.mp3')
+                audio.play()
+            
+            }else if(params=='j'){
+                const audio=new Audio('sounds/j.mp3')
+                audio.play()
+            
+            }else if(params=='k'){
+                const audio=new Audio('sounds/k.mp3')
+                audio.play()
+            
+            }else if(params=='l'){
+                const audio=new Audio('sounds/l.mp3')
+                audio.play()
+            
+            }
+        }
+    </script>
+</body>
+</html>
